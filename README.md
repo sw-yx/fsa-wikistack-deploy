@@ -9,7 +9,7 @@ In this workshop, we will continue to build with the technology stack we have be
 - Tagging
 - Bonus: version history, discussion tab on each page
 
-# Wikistack deployed - comments by @swyx
+# Wikistack deployed - comments by [@swyx](https://twitter.com/swyx)
 
 This is a version of FSA wikistack deployed on Heroku at <https://swyx-wikistack.herokuapp.com/> and the code is at <https://github.com/sw-yx/fsa-wikistack-deploy/>.
 
