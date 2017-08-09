@@ -61,9 +61,9 @@ router.get('/search/:tag', function (req, res, next) {
 
 // /wiki/Javascript
 router.get('/:urlTitle', function (req, res, next) {
-
     var urlTitleOfAPage = req.params.urlTitle;
-
+    console.log('hello from ' + urlTitleOfAPage)
+    
     Page.findOne({
         where: {
             urlTitle: urlTitleOfAPage
@@ -162,11 +162,12 @@ router.post('/:urlTitle/edit', function (req, res, next) {
             for (var key in req.body) {
                 page[key] = req.body[key];
             }
-
+            page.urlTitle = page.getURLtitle
             return page.save();
 
         })
         .then(function (updatedPage) {
+            console.log('updatedPage.route', updatedPage.route)
             res.redirect(updatedPage.route);
         })
         .catch(next);

@@ -26,7 +26,11 @@ app.use('/wiki', wikiRouter);
 app.use('/users', usersRouter);
 
 app.get('/', function (req, res) {
-    res.redirect('/wiki');
+    var readme = require('fs').readFileSync('README.md')
+    console.log('readme', readme.toString())
+    res.render('landingpage', {
+        readmeContent: require('marked')(readme.toString())
+    });
 });
 
 app.use(function (err, req, res, next) {

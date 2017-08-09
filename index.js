@@ -8,8 +8,9 @@ User.sync()
         return Page.sync();
     })
     .then(function () {
-        app.listen(process.env.PORT || 3001, function () {
-            console.log('Server is listening on port 3001!');
+        const portvar = process.env.PORT || 3001
+        app.listen(portvar, function () {
+            console.log('Server is listening on port ' + portvar);
         });
     });
 

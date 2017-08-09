@@ -47,6 +47,11 @@ var Page = db.define('page', {
         get () {
             return marked(this.getDataValue('content'))
         }
+    }, getURLtitle: {
+        type: Sequelize.VIRTUAL,
+        get () {
+            return this.title.replace(/\s+/g, '_').replace(/\W/g, '')
+        }
     }
 })
 
