@@ -26,7 +26,7 @@ app.use('/wiki', wikiRouter);
 app.use('/users', usersRouter);
 
 app.get('/', function (req, res) {
-    var readme = require('fs').readFileSync('README.md')
+    var readme = require('fs').readFileSync(__dirname + '/README.md')
     console.log('readme', readme.toString())
     res.render('landingpage', {
         readmeContent: require('marked')(readme.toString())
