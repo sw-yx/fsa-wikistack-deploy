@@ -1,5 +1,5 @@
 var Sequelize = require('sequelize');
-var db = new Sequelize('postgres://localhost:5432/wikistack', { logging: false });
+var db = new Sequelize(process.env.DATABASE_URL || 'postgres://localhost:5432/wikistack', { logging: false });
 var marked = require('marked');
 
 var Page = db.define('page', {
